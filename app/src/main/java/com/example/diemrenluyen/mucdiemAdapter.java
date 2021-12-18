@@ -14,7 +14,6 @@ import java.util.ArrayList;
 public class mucdiemAdapter extends RecyclerView.Adapter<mucdiemAdapter.ViewHolder> {
 
     ArrayList<mucchamdomain> mucchamdomains;
-    private int soluong = 0;
     public mucdiemAdapter(ArrayList<mucchamdomain> mucchamdomains) {
         this.mucchamdomains = mucchamdomains;
     }
@@ -29,14 +28,17 @@ public class mucdiemAdapter extends RecyclerView.Adapter<mucdiemAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
         int smax = mucchamdomains.get(position).getDiemtoida();
         holder.txt_noidung.setText(mucchamdomains.get(position).getNoidung());
-        holder.txt_diem.setText(0);
-        soluong =Integer.parseInt(holder.txt_diem.getText().toString());
+        holder.txt_diem.setText("0");
+
         holder.btn_cong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int  soluong =Integer.parseInt(holder.txt_diem.getText().toString());
                 if (soluong>=smax){
+
 
                 }else{
                 soluong = soluong + 1;
@@ -48,6 +50,7 @@ public class mucdiemAdapter extends RecyclerView.Adapter<mucdiemAdapter.ViewHold
         holder.btn_tru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int  soluong =Integer.parseInt(holder.txt_diem.getText().toString());
                 if (soluong > 0) {
                     soluong = soluong - 1;
                 }
