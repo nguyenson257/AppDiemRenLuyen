@@ -59,11 +59,11 @@ public class mucdiemAdapter extends RecyclerView.Adapter<mucdiemAdapter.ViewHold
         });
     }
 
+
     @Override
     public int getItemCount() {
         return mucchamdomains.size();
     }
-
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView txt_noidung, txt_diem;
