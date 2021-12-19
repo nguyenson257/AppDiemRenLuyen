@@ -14,6 +14,16 @@ public class mucchamdomain {
         this.diemtoida = diemtoida;
     }
 
+    @Override
+    public String toString() {
+        return "mucchamdomain{" +
+                "idmdcon=" + idmdcon +
+                ", idmdcha=" + idmdcha +
+                ", noidung='" + noidung + '\'' +
+                ", diemtoida=" + diemtoida +
+                '}';
+    }
+
     public int getIdmdcon() {
         return idmdcon;
     }

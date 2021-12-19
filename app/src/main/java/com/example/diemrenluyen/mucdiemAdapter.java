@@ -65,6 +65,10 @@ public class mucdiemAdapter extends RecyclerView.Adapter<mucdiemAdapter.ViewHold
         return mucchamdomains.size();
     }
 
+    public mucchamdomain getitem(int posision){
+        return mucchamdomains.get(posision);
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView txt_noidung, txt_diem;
         ImageView btn_tru,btn_cong;
