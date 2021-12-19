@@ -19,7 +19,8 @@ public class ChamDiem extends AppCompatActivity {
 
     private RecyclerView danhsachmuccham;
     private RecyclerView.Adapter adapter;
-    private mucdiemAdapter listdiem;
+    private mucdiemAdapter list;
+    private ArrayList<getdiemcham> listdiem = new ArrayList<>();
     private Button btn_nopdiem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +32,10 @@ public class ChamDiem extends AppCompatActivity {
         btn_nopdiem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listdiem= (mucdiemAdapter) danhsachmuccham.getAdapter();
-                ArrayList<mucchamdomain> danhsachcham = new ArrayList<>();
-                danhsachcham.add(listdiem.getitem(1));
-                Toast.makeText(ChamDiem.this,danhsachcham.get(0).toString(), Toast.LENGTH_SHORT).show();
+                list= (mucdiemAdapter) danhsachmuccham.getAdapter();
+                ArrayList<getdiemcham> danhsachcham = new ArrayList<>();
+                listdiem=(list.getitem());
+                Toast.makeText(ChamDiem.this,listdiem.get(0).toString(), Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -67,7 +68,7 @@ public class ChamDiem extends AppCompatActivity {
         mucchamdomains.add(new mucchamdomain(6,1,"Noi dung 6",4));
         mucchamdomains.add(new mucchamdomain(7,1,"Noi dung 7",1));
         mucchamdomains.add(new mucchamdomain(8,1,"Noi dung 8",2));
-        adapter = new mucdiemAdapter(mucchamdomains);
+        adapter = new mucdiemAdapter(mucchamdomains,listdiem);
         danhsachmuccham.setAdapter(adapter);
     }
 }

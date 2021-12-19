@@ -14,8 +14,14 @@ import java.util.ArrayList;
 public class mucdiemAdapter extends RecyclerView.Adapter<mucdiemAdapter.ViewHolder> {
 
     ArrayList<mucchamdomain> mucchamdomains;
+    ArrayList<getdiemcham> getdiemchams;
     public mucdiemAdapter(ArrayList<mucchamdomain> mucchamdomains) {
         this.mucchamdomains = mucchamdomains;
+    }
+
+    public mucdiemAdapter(ArrayList<mucchamdomain> mucchamdomains, ArrayList<getdiemcham> getdiemchams) {
+        this.mucchamdomains = mucchamdomains;
+        this.getdiemchams = getdiemchams;
     }
 
     @NonNull
@@ -28,22 +34,21 @@ public class mucdiemAdapter extends RecyclerView.Adapter<mucdiemAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        getdiemchams.get(position).setIdmdcon(mucchamdomains.get(position).getIdmdcon());
+        getdiemchams.get(position).setDiemcham(0);
         int smax = mucchamdomains.get(position).getDiemtoida();
         holder.txt_noidung.setText(mucchamdomains.get(position).getNoidung());
         holder.txt_diem.setText("0");
-
         holder.btn_cong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int  soluong =Integer.parseInt(holder.txt_diem.getText().toString());
                 if (soluong>=smax){
-
-
                 }else{
                 soluong = soluong + 1;
                 holder.txt_diem.setText(String.valueOf(soluong));
-            }
+                getdiemchams.get(position).setDiemcham(soluong);
+                }
             }
         });
 
@@ -53,6 +58,7 @@ public class mucdiemAdapter extends RecyclerView.Adapter<mucdiemAdapter.ViewHold
                 int  soluong =Integer.parseInt(holder.txt_diem.getText().toString());
                 if (soluong > 0) {
                     soluong = soluong - 1;
+                    getdiemchams.get(position).setDiemcham(soluong);
                 }
                 holder.txt_diem.setText(String.valueOf(soluong));
             }
@@ -65,8 +71,8 @@ public class mucdiemAdapter extends RecyclerView.Adapter<mucdiemAdapter.ViewHold
         return mucchamdomains.size();
     }
 
-    public mucchamdomain getitem(int posision){
-        return mucchamdomains.get(posision);
+    public ArrayList<getdiemcham> getitem(){
+        return getdiemchams;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
