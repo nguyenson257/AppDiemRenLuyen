@@ -53,7 +53,7 @@ public class ChamDiem extends AppCompatActivity {
              ) {
             tongdiem = tongdiem + d.diemcham;
         };
-        tongdiem1.setText(String.valueOf(tongdiem));
+        tongdiem1.setText(String.valueOf(tongdiem)+"/"+String.valueOf(mmax1));
     }
 
     private void mucchamlist(){
