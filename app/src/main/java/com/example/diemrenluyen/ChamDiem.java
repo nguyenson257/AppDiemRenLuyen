@@ -18,7 +18,7 @@ import retrofit2.Response;
 
 public class ChamDiem extends AppCompatActivity {
 
-    private ArrayList<mucchamdomain> mucchamdomains, mucchamdomains1, mucchamdomains2, mucchamdomains3, mucchamdomains4, mucchamdomains5 ;
+    private ArrayList<mucchamdomain>  mucchamdomains1 = new ArrayList<>(), mucchamdomains2 = new ArrayList<>(), mucchamdomains3 = new ArrayList<>(), mucchamdomains4 = new ArrayList<>(), mucchamdomains5 = new ArrayList<>() ;
     private RecyclerView danhsachmuccham1, danhsachmuccham2, danhsachmuccham3, danhsachmuccham4, danhsachmuccham5;
     private RecyclerView.Adapter adapter1, adapter2, adapter3, adapter4, adapter5;
     private mucdiemAdapter list1, list2, list3, list4, list5 ;
@@ -31,9 +31,22 @@ public class ChamDiem extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cham_diem);
         init();
-        mucchamlist();
+        ApiService.apiService.showitem().enqueue(new Callback<ArrayList<mucchamdomain>>() {
+            @Override
+            public void onResponse(Call<ArrayList<mucchamdomain>> call, Response<ArrayList<mucchamdomain>> response) {
+
+                ArrayList<mucchamdomain> allmucchamdomains = response.body();
+                setadapter(allmucchamdomains);
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<mucchamdomain>> call, Throwable t) {
+
+            }
+        });
+//        mucchamlist();
         setlayoutrecycleview();
-        setadapter();
+
         btn_nopdiem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,15 +62,19 @@ public class ChamDiem extends AppCompatActivity {
     }
 
     private void setlayoutrecycleview() {
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        danhsachmuccham1.setLayoutManager(linearLayoutManager);
-        danhsachmuccham2.setLayoutManager(linearLayoutManager);
-        danhsachmuccham3.setLayoutManager(linearLayoutManager);
-        danhsachmuccham4.setLayoutManager(linearLayoutManager);
-        danhsachmuccham5.setLayoutManager(linearLayoutManager);
+        LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager linearLayoutManager2 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager linearLayoutManager3 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager linearLayoutManager4 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager linearLayoutManager5 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        danhsachmuccham1.setLayoutManager(linearLayoutManager1);
+        danhsachmuccham2.setLayoutManager(linearLayoutManager2);
+        danhsachmuccham3.setLayoutManager(linearLayoutManager3);
+        danhsachmuccham4.setLayoutManager(linearLayoutManager4);
+        danhsachmuccham5.setLayoutManager(linearLayoutManager5);
     }
 
-    private void setadapter() {
+    private void setadapter(ArrayList<mucchamdomain> mucchamdomains) {
         for (mucchamdomain i:mucchamdomains
         ) {
             if(i.getIdmdcha()==1){
@@ -81,7 +98,7 @@ public class ChamDiem extends AppCompatActivity {
         for (mucchamdomain i:mucchamdomains
         ) {
             if(i.getIdmdcha()==3){
-                mmax1 =mmax3+ i.getDiemtoida();
+                mmax3 =mmax3+ i.getDiemtoida();
                 mucchamdomains3.add(i);
             }
         }
@@ -131,22 +148,22 @@ public class ChamDiem extends AppCompatActivity {
             tongd1 = tongd1 + d.diemcham;
         };
 
-        for (getdiemcham d:listdiem1
+        for (getdiemcham d:listdiem2
         ) {
             tongd2 = tongd2 + d.diemcham;
         };
 
-        for (getdiemcham d:listdiem1
+        for (getdiemcham d:listdiem3
         ) {
             tongd3 = tongd3 + d.diemcham;
         };
 
-        for (getdiemcham d:listdiem1
+        for (getdiemcham d:listdiem4
         ) {
             tongd4 = tongd4 + d.diemcham;
         };
 
-        for (getdiemcham d:listdiem1
+        for (getdiemcham d:listdiem5
         ) {
             tongd5 = tongd5 + d.diemcham;
         };
@@ -167,17 +184,8 @@ public class ChamDiem extends AppCompatActivity {
 
 
     private void mucchamlist(){
-        ApiService.apiService.showitem().enqueue(new Callback<ArrayList<mucchamdomain>>() {
-            @Override
-            public void onResponse(Call<ArrayList<mucchamdomain>> call, Response<ArrayList<mucchamdomain>> response) {
-                mucchamdomains = response.body();
-            }
 
-            @Override
-            public void onFailure(Call<ArrayList<mucchamdomain>> call, Throwable t) {
 
-            }
-        });
     }
     public void init(){
         danhsachmuccham1 = findViewById(R.id.danhsach1);
