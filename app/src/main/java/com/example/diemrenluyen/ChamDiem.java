@@ -35,7 +35,7 @@ public class ChamDiem extends AppCompatActivity {
                 list= (mucdiemAdapter) danhsachmuccham.getAdapter();
                 ArrayList<getdiemcham> danhsachcham = new ArrayList<>();
                 listdiem=(list.getitem());
-                Toast.makeText(ChamDiem.this,listdiem.get(0).toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ChamDiem.this,listdiem.get(0).toString()+listdiem.get(1).toString()+listdiem.get(2).toString()+listdiem.get(3).toString()+listdiem.get(4).toString(), Toast.LENGTH_SHORT).show();
 
             }
         });
