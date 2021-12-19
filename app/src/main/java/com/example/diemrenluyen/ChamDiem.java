@@ -21,27 +21,33 @@ public class ChamDiem extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     private mucdiemAdapter list;
     private ArrayList<getdiemcham> listdiem = new ArrayList<>();
-    private Button btn_nopdiem;
+    private Button btn_nopdiem,btn_capnhat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cham_diem);
-        danhsachmuccham = findViewById(R.id.danhsach);
-        btn_nopdiem = findViewById(R.id.btn_nopdiem);
+        init();
         mucchamlist();
         btn_nopdiem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                list= (mucdiemAdapter) danhsachmuccham.getAdapter();
-                ArrayList<getdiemcham> danhsachcham = new ArrayList<>();
-                listdiem=(list.getitem());
-                Toast.makeText(ChamDiem.this,listdiem.get(0).toString()+listdiem.get(1).toString()+listdiem.get(2).toString()+listdiem.get(3).toString()+listdiem.get(4).toString(), Toast.LENGTH_SHORT).show();
 
             }
         });
-
-
+        btn_capnhat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                settongdiem();
+            }
+        });
     }
+
+    private void settongdiem(){
+        list= (mucdiemAdapter) danhsachmuccham.getAdapter();
+        listdiem=(list.getitem());
+        Toast.makeText(ChamDiem.this,listdiem.get(0).toString(), Toast.LENGTH_SHORT).show();
+    }
+
     private void mucchamlist(){
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         danhsachmuccham.setLayoutManager(linearLayoutManager);
@@ -70,5 +76,10 @@ public class ChamDiem extends AppCompatActivity {
         mucchamdomains.add(new mucchamdomain(8,1,"Noi dung 8",2));
         adapter = new mucdiemAdapter(mucchamdomains,listdiem);
         danhsachmuccham.setAdapter(adapter);
+    }
+    public void init(){
+        danhsachmuccham = findViewById(R.id.danhsach1);
+        btn_nopdiem = findViewById(R.id.btn_nopdiem);
+        btn_nopdiem = findViewById(R.id.btn_capnhat);
     }
 }
