@@ -80,6 +80,6 @@ public class ChamDiem extends AppCompatActivity {
     public void init(){
         danhsachmuccham = findViewById(R.id.danhsach1);
         btn_nopdiem = findViewById(R.id.btn_nopdiem);
-        btn_nopdiem = findViewById(R.id.btn_capnhat);
+        btn_capnhat = findViewById(R.id.btn_capnhat);
     }
 }
