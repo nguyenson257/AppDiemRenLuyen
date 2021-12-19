@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,8 +21,10 @@ public class ChamDiem extends AppCompatActivity {
     private RecyclerView danhsachmuccham;
     private RecyclerView.Adapter adapter;
     private mucdiemAdapter list;
+    private int mmax1=0;
     private ArrayList<getdiemcham> listdiem = new ArrayList<>();
     private Button btn_nopdiem,btn_capnhat;
+    private TextView tongdiem1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,9 +46,14 @@ public class ChamDiem extends AppCompatActivity {
     }
 
     private void settongdiem(){
+        int tongdiem = 0;
         list= (mucdiemAdapter) danhsachmuccham.getAdapter();
         listdiem=(list.getitem());
-        Toast.makeText(ChamDiem.this,listdiem.get(0).toString(), Toast.LENGTH_SHORT).show();
+        for (getdiemcham d:listdiem
+             ) {
+            tongdiem = tongdiem + d.diemcham;
+        };
+        tongdiem1.setText(String.valueOf(tongdiem));
     }
 
     private void mucchamlist(){
@@ -74,6 +82,10 @@ public class ChamDiem extends AppCompatActivity {
         mucchamdomains.add(new mucchamdomain(6,1,"Noi dung 6",4));
         mucchamdomains.add(new mucchamdomain(7,1,"Noi dung 7",1));
         mucchamdomains.add(new mucchamdomain(8,1,"Noi dung 8",2));
+        for (mucchamdomain i:mucchamdomains
+             ) {
+            mmax1 =mmax1+ i.getDiemtoida();
+        }
         adapter = new mucdiemAdapter(mucchamdomains,listdiem);
         danhsachmuccham.setAdapter(adapter);
     }
@@ -81,5 +93,6 @@ public class ChamDiem extends AppCompatActivity {
         danhsachmuccham = findViewById(R.id.danhsach1);
         btn_nopdiem = findViewById(R.id.btn_nopdiem);
         btn_capnhat = findViewById(R.id.btn_capnhat);
+        tongdiem1 = findViewById(R.id.tongdiem1);
     }
 }
