@@ -70,7 +70,7 @@ public class ChamDiem extends AppCompatActivity {
                 ) {
                     mmax1 =mmax1+ i.getDiemtoida();
                 }
-                adapter = new mucdiemAdapter(mucchamdomains);
+                adapter = new mucdiemAdapter(mucchamdomains,listdiem);
                 danhsachmuccham.setAdapter(adapter);
             }
 

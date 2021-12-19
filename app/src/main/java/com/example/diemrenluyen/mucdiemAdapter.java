@@ -34,10 +34,13 @@ public class mucdiemAdapter extends RecyclerView.Adapter<mucdiemAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        getdiemchams.add(new getdiemcham(0,mucchamdomains.get(position).getIdmdcon()));
+
         int smax = mucchamdomains.get(position).getDiemtoida();
+        int idcon = mucchamdomains.get(position).getIdmdcon();
         holder.txt_noidung.setText(mucchamdomains.get(position).getNoidung());
         holder.txt_diem.setText("0");
+        getdiemcham a = new getdiemcham(0,idcon);
+        getdiemchams.add(a);
         holder.btn_cong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
