@@ -25,26 +25,16 @@ public class ChamDiem extends AppCompatActivity {
     private int mmax1=0, mmax2=0, mmax3=0, mmax4=0, mmax5=0;
     private ArrayList<getdiemcham> listdiem1 = new ArrayList<>(), listdiem2 = new ArrayList<>(), listdiem3 = new ArrayList<>(), listdiem4 = new ArrayList<>(), listdiem5 = new ArrayList<>();
     private Button btn_nopdiem,btn_capnhat;
-    private TextView tongdiem1, tongdiem2, tongdiem3, tongdiem4, tongdiem5;
+    private TextView tongdiem1, tongdiem2, tongdiem3, tongdiem4, tongdiem5, tongdiemtatca;
+    private TextView noidung1, noidung2, noidung3, noidung4, noidung5;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cham_diem);
         init();
-        ApiService.apiService.showitem().enqueue(new Callback<ArrayList<mucchamdomain>>() {
-            @Override
-            public void onResponse(Call<ArrayList<mucchamdomain>> call, Response<ArrayList<mucchamdomain>> response) {
-
-                ArrayList<mucchamdomain> allmucchamdomains = response.body();
-                setadapter(allmucchamdomains);
-            }
-
-            @Override
-            public void onFailure(Call<ArrayList<mucchamdomain>> call, Throwable t) {
-
-            }
-        });
-//        mucchamlist();
+        mucchalist();
+        mucchamlist();
         setlayoutrecycleview();
 
         btn_nopdiem.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +51,8 @@ public class ChamDiem extends AppCompatActivity {
         });
     }
 
+
+
     private void setlayoutrecycleview() {
         LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         LinearLayoutManager linearLayoutManager2 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -72,6 +64,26 @@ public class ChamDiem extends AppCompatActivity {
         danhsachmuccham3.setLayoutManager(linearLayoutManager3);
         danhsachmuccham4.setLayoutManager(linearLayoutManager4);
         danhsachmuccham5.setLayoutManager(linearLayoutManager5);
+    }
+    private void setadaptercha(ArrayList<mucchadomain> allmuccha) {
+        for (mucchadomain i:allmuccha
+        ) {
+            if(i.getIdmdcha()==1){
+                noidung1.setText(i.getNoidung());
+            }
+            if(i.getIdmdcha()==2){
+                noidung2.setText(i.getNoidung());
+            }
+            if(i.getIdmdcha()==3){
+                noidung3.setText(i.getNoidung());
+            }
+            if(i.getIdmdcha()==4){
+                noidung4.setText(i.getNoidung());
+            }
+            if(i.getIdmdcha()==5){
+                noidung5.setText(i.getNoidung());
+            }
+        }
     }
 
     private void setadapter(ArrayList<mucchamdomain> mucchamdomains) {
@@ -132,6 +144,7 @@ public class ChamDiem extends AppCompatActivity {
         int tongd3 = 0;
         int tongd4 = 0;
         int tongd5 = 0;
+        int tongtc = 0;
         list1= (mucdiemAdapter) danhsachmuccham1.getAdapter();
         list2= (mucdiemAdapter) danhsachmuccham2.getAdapter();
         list3= (mucdiemAdapter) danhsachmuccham3.getAdapter();
@@ -168,24 +181,54 @@ public class ChamDiem extends AppCompatActivity {
             tongd5 = tongd5 + d.diemcham;
         };
 
+        tongtc = tongd1 + tongd2 + tongd3 + tongd4 + tongd5;
+
         String text1 = "Tổng điểm mục 1: "+(tongd1)+"/"+(mmax1)+" điểm";
         String text2 = "Tổng điểm mục 2: "+(tongd2)+"/"+(mmax2)+" điểm";
         String text3 = "Tổng điểm mục 3: "+(tongd3)+"/"+(mmax3)+" điểm";
         String text4 = "Tổng điểm mục 4: "+(tongd4)+"/"+(mmax4)+" điểm";
         String text5 = "Tổng điểm mục 5: "+(tongd5)+"/"+(mmax5)+" điểm";
+        String texttc = "Tổng điểm đã chấm: "+tongtc+"/100 điểm";
 
         tongdiem1.setText(text1);
         tongdiem2.setText(text2);
         tongdiem3.setText(text3);
         tongdiem4.setText(text4);
         tongdiem5.setText(text5);
+        tongdiemtatca.setText(texttc);
+    }
+
+    private void mucchalist() {
+        ApiService.apiService.showmuccha().enqueue(new Callback<ArrayList<mucchadomain>>() {
+            @Override
+            public void onResponse(Call<ArrayList<mucchadomain>> call, Response<ArrayList<mucchadomain>> response) {
+                ArrayList<mucchadomain> allmuccha = response.body();
+                setadaptercha(allmuccha);
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<mucchadomain>> call, Throwable t) {
+
+            }
+        });
     }
 
 
 
     private void mucchamlist(){
+        ApiService.apiService.showitem().enqueue(new Callback<ArrayList<mucchamdomain>>() {
+            @Override
+            public void onResponse(Call<ArrayList<mucchamdomain>> call, Response<ArrayList<mucchamdomain>> response) {
 
+                ArrayList<mucchamdomain> allmucchamdomains = response.body();
+                setadapter(allmucchamdomains);
+            }
 
+            @Override
+            public void onFailure(Call<ArrayList<mucchamdomain>> call, Throwable t) {
+
+            }
+        });
     }
     public void init(){
         danhsachmuccham1 = findViewById(R.id.danhsach1);
@@ -195,10 +238,16 @@ public class ChamDiem extends AppCompatActivity {
         danhsachmuccham5 = findViewById(R.id.danhsach5);
         btn_nopdiem = findViewById(R.id.btn_nopdiem);
         btn_capnhat = findViewById(R.id.btn_capnhat);
+        tongdiemtatca = findViewById(R.id.tongdiemtatca);
         tongdiem1 = findViewById(R.id.tongdiem1);
         tongdiem2 = findViewById(R.id.tongdiem2);
         tongdiem3 = findViewById(R.id.tongdiem3);
         tongdiem4 = findViewById(R.id.tongdiem4);
         tongdiem5 = findViewById(R.id.tongdiem5);
+        noidung1 = findViewById(R.id.noidung);
+        noidung2 = findViewById(R.id.noidung2);
+        noidung3 = findViewById(R.id.noidung3);
+        noidung4 = findViewById(R.id.noidung4);
+        noidung5 = findViewById(R.id.noidung5);
     }
 }

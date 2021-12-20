@@ -24,4 +24,6 @@ public interface ApiService {
             .create(ApiService.class);
     @GET("mucdiemcon/list")
     Call<ArrayList<mucchamdomain>> showitem();
+    @GET("mucdiemcha/list")
+    Call<ArrayList<mucchadomain>> showmuccha();
 }
