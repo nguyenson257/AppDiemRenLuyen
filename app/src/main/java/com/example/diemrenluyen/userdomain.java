@@ -15,6 +15,24 @@ public class userdomain implements Serializable {
     private String sdt;
     private String email;
 
+
+    @Override
+    public String toString() {
+        return "userdomain{" +
+                "iduser=" + iduser +
+                ", idrole=" + idrole +
+                ", idlop=" + idlop +
+                ", madn='" + madn + '\'' +
+                ", ten='" + ten + '\'' +
+                ", pass='" + pass + '\'' +
+                ", ngaysinh='" + ngaysinh + '\'' +
+                ", gioitinh='" + gioitinh + '\'' +
+                ", quequan='" + quequan + '\'' +
+                ", sdt='" + sdt + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
     public userdomain(int iduser, int idrole, int idlop, String madn, String ten, String pass, String ngaysinh, String gioitinh, String quequan, String sdt, String email) {
         this.iduser = iduser;
         this.idrole = idrole;

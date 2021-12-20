@@ -26,4 +26,7 @@ public interface ApiService {
     Call<ArrayList<mucchamdomain>> showitem();
     @GET("mucdiemcha/list")
     Call<ArrayList<mucchadomain>> showmuccha();
+    @GET("user/list")
+    Call<ArrayList<userdomain>> showuser();
+
 }
