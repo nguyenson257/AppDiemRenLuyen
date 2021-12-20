@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +29,8 @@ public class ChamDiem extends AppCompatActivity {
     private Button btn_nopdiem,btn_capnhat;
     private TextView tongdiem1, tongdiem2, tongdiem3, tongdiem4, tongdiem5, tongdiemtatca;
     private TextView noidung1, noidung2, noidung3, noidung4, noidung5;
+    private ImageView btn_close;
+    private userdomain user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +44,22 @@ public class ChamDiem extends AppCompatActivity {
         btn_nopdiem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
             }
         });
         btn_capnhat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 settongdiem();
+            }
+        });
+        btn_close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), TrangChu.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("object_user",user);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
     }
@@ -249,5 +262,6 @@ public class ChamDiem extends AppCompatActivity {
         noidung3 = findViewById(R.id.noidung3);
         noidung4 = findViewById(R.id.noidung4);
         noidung5 = findViewById(R.id.noidung5);
+        btn_close = findViewById(R.id.btn_close);
     }
 }
