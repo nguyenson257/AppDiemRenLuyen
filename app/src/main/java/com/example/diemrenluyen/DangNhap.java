@@ -33,11 +33,6 @@ public class DangNhap extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 clicklogin();
-                Intent intent = new Intent(getApplicationContext(), TrangChu.class);
-//                Bundle bundle = new Bundle();
-//                bundle.putSerializable("object_user",khachhang);
-//                intent.putExtras(bundle);
-                startActivity(intent);
             }
         });
 
