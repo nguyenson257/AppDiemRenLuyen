@@ -13,6 +13,7 @@
         android:paddingTop="35dp"
         android:paddingBottom="35dp">
         <ImageView
+            android:id="@+id/img_back_ttcn"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_marginLeft="10dp"
@@ -75,159 +76,140 @@
 
             </RelativeLayout>
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans"
-                android:text="Mã sinh viên"
-                android:paddingLeft="10dp"/>
+                android:layout_marginTop="15dp"
+                android:text="Mã sinh viên"/>
 
-            <EditText
+            <TextView
+                android:id="@+id/tv_ttcn_masv"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@color/xanhduong"
-                android:editable="false"
-                android:fontFamily="@font/opensans"
-                android:paddingLeft="10dp"
-                android:text="1911505310234"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/tv_gachchan_hoso"
+                android:text="1911505310146"
+                android:paddingBottom="5dp"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans"
-                android:text="Họ và tên"
-                android:paddingLeft="10dp"/>
-
-            <EditText
+                android:layout_marginTop="15dp"
+                android:text="Họ tên"/>
+            <TextView
+                android:id="@+id/tv_ttcn_hoten"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@color/xanhduong"
-                android:editable="false"
-                android:fontFamily="@font/opensans"
-                android:paddingLeft="10dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/tv_gachchan_hoso"
                 android:text="Nguyễn Nhã Thy"
+                android:paddingBottom="5dp"
                 android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans"
-                android:text="Giới tính"
-                android:paddingLeft="10dp"/>
+                android:textSize="18dp"
+                android:textStyle="bold"/>
 
-            <EditText
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@color/xanhduong"
-                android:editable="false"
-                android:fontFamily="@font/opensans"
-                android:paddingLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Giới tính"/>
+            <TextView
+                android:id="@+id/tv_ttcn_gioitinh"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/tv_gachchan_hoso"
                 android:text="Nữ"
                 android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans"
-                android:text="Ngày sinh"
-                android:paddingLeft="10dp"/>
+                android:textSize="18dp"
+                android:textStyle="bold"/>
 
-            <EditText
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@color/xanhduong"
-                android:editable="false"
-                android:fontFamily="@font/opensans"
-                android:paddingLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Ngày sinh"/>
+            <TextView
+                android:id="@+id/tv_ttcn_ngaysinh"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/tv_gachchan_hoso"
                 android:text="01/01/1999"
                 android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans"
-                android:text="Số điện thoại"
-                android:paddingLeft="10dp"/>
+                android:layout_marginTop="15dp"
+                android:text="Số điện thoại"/>
+            <TextView
+                android:id="@+id/tv_ttcn_sdt"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/tv_gachchan_hoso"
+                android:text="0394726582"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Email"/>
+            <TextView
+                android:id="@+id/tv_ttcn_email"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/tv_gachchan_hoso"
+                android:text="nhatthy@gmail.com"
+                android:paddingBottom="5dp"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Lớp"/>
 
             <EditText
+                android:id="@+id/tv_ttcn_lop"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@color/xanhduong"
-                android:editable="false"
-                android:fontFamily="@font/opensans"
-                android:paddingLeft="10dp"
-                android:text="0234657897"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/tv_gachchan_hoso"
+                android:text="19T1"
+                android:paddingBottom="5dp"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans"
-                android:text="Email"
-                android:paddingLeft="10dp"/>
+                android:layout_marginTop="15dp"
+                android:text="Khoa"/>
 
             <EditText
+                android:id="@+id/tv_ttcn_khoa"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@color/xanhduong"
-                android:editable="false"
-                android:fontFamily="@font/opensans"
-                android:paddingLeft="10dp"
-                android:text="nhathy@gmail.com"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/tv_gachchan_hoso"
+                android:text="Khoa dien tu"
+                android:paddingBottom="5dp"
                 android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans"
-                android:text="Lớp"
-                android:paddingLeft="10dp"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@color/xanhduong"
-                android:editable="false"
-                android:fontFamily="@font/opensans"
-                android:paddingLeft="10dp"
-                android:text="19T2"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans"
-                android:text="Khoa"
-                android:paddingLeft="10dp"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@color/xanhduong"
-                android:editable="false"
-                android:fontFamily="@font/opensans"
-                android:paddingLeft="10dp"
-                android:text="Điện - Điện tử"
-                android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
             <Button
+                android:id="@+id/btn_sua_ttcn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"

@@ -36,6 +36,12 @@ public class ChamDiem extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cham_diem);
+
+        Bundle bundleRecevie = getIntent().getExtras();
+        if(bundleRecevie!=null){
+            user = (userdomain) bundleRecevie.get("object_user");
+        }
+
         init();
         mucchalist();
         mucchamlist();

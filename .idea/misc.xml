@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Application/Android/DiemRenLuyen/app/src/main/res/drawable-v24/tv_gachchan_hoso.xml" value="0.14831081081081082" />
         <entry key="..\:/Application/Android/DiemRenLuyen/app/src/main/res/drawable/back_cornner.xml" value="0.14831081081081082" />
         <entry key="..\:/Application/Android/DiemRenLuyen/app/src/main/res/drawable/boder_blue.xml" value="0.14831081081081082" />
         <entry key="..\:/Application/Android/DiemRenLuyen/app/src/main/res/drawable/button_back.xml" value="0.14831081081081082" />
@@ -10,6 +11,7 @@
         <entry key="..\:/Application/Android/DiemRenLuyen/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.14831081081081082" />
         <entry key="..\:/Application/Android/DiemRenLuyen/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.14831081081081082" />
         <entry key="..\:/Application/Android/DiemRenLuyen/app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.14831081081081082" />
+        <entry key="..\:/Application/Android/DiemRenLuyen/app/src/main/res/drawable/tv_gachchan_hoso.xml" value="0.14831081081081082" />
         <entry key="..\:/Application/Android/DiemRenLuyen/app/src/main/res/layout/activity_cham_diem.xml" value="0.18" />
         <entry key="..\:/Application/Android/DiemRenLuyen/app/src/main/res/layout/activity_chinh_sua_thong_tin.xml" value="0.21" />
         <entry key="..\:/Application/Android/DiemRenLuyen/app/src/main/res/layout/activity_dang_nhap.xml" value="0.19" />

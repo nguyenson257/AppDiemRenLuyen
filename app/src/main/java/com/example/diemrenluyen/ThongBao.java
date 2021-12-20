@@ -16,6 +16,10 @@ public class ThongBao extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thong_bao);
+        Bundle bundleRecevie = getIntent().getExtras();
+        if(bundleRecevie!=null){
+            user = (userdomain) bundleRecevie.get("object_user");
+        }
         bottomNavigation();
     }
     private void bottomNavigation() {

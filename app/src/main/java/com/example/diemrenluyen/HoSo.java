@@ -6,17 +6,55 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class HoSo extends AppCompatActivity {
     private userdomain user;
-
+    private RelativeLayout thongtincanhan, password, dangxuat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ho_so);
+        Bundle bundleRecevie = getIntent().getExtras();
+        if(bundleRecevie!=null){
+            user = (userdomain) bundleRecevie.get("object_user");
+        }
         bottomNavigation();
+        thongtincanhan = findViewById(R.id.thongtincanhan);
+        password = findViewById(R.id.password);
+        dangxuat = findViewById(R.id.dangxuat);
+
+        thongtincanhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ThongTinCaNhan.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("object_user",user);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+
+        password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), DoiMatKhau.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("object_user",user);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+
+        dangxuat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), DangNhap.class);
+                startActivity(intent);
+            }
+        });
     }
     private void bottomNavigation() {
         FloatingActionButton floatingActionButton = findViewById(R.id.card_btn);
