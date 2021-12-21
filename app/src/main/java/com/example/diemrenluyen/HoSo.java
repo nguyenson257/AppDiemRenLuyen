@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class HoSo extends AppCompatActivity {
     private userdomain user;
     private RelativeLayout thongtincanhan, password, dangxuat;
+    private TextView txt_name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +27,9 @@ public class HoSo extends AppCompatActivity {
         thongtincanhan = findViewById(R.id.thongtincanhan);
         password = findViewById(R.id.password);
         dangxuat = findViewById(R.id.dangxuat);
+        txt_name = findViewById(R.id.txt_name);
 
+        txt_name.setText(user.getTen());
         thongtincanhan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

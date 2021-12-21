@@ -29,8 +29,8 @@ public interface ApiService {
     @GET("user/list")
     Call<ArrayList<userdomain>> showuser();
     @GET("lop/list")
-    Call<ArrayList<userdomain>> showlop();
+    Call<ArrayList<lopdomain>> showlop();
     @GET("khoa/list")
-    Call<ArrayList<userdomain>> showkhoa();
+    Call<ArrayList<khoadomain>> showkhoa();
 
 }

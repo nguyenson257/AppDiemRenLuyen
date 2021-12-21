@@ -9,11 +9,19 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class ThongTinCaNhan extends AppCompatActivity {
     private userdomain user;
     private Button btn_sua_ttcn;
     private ImageView img_back_ttcn;
-    private TextView tv_hoten, tv_sdt, tv_gioitinh, tv_ngaysinh, tv_email, tv_masv, tv_lop, tv_khoa;
+    private ArrayList<lopdomain> lop= new ArrayList<>();
+    private ArrayList<khoadomain> khoa= new ArrayList<>();
+    private TextView tv_hoten, tv_sdt, tv_gioitinh, tv_ngaysinh, tv_email, tv_masv, tv_lop, tv_khoa, txt_hname;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,18 +31,66 @@ public class ThongTinCaNhan extends AppCompatActivity {
             user = (userdomain) bundleRecevie.get("object_user");
         }
         AnhXa();
+        getlop();
+        getkhoa();
         setInfor(user);
         OnTab();
     }
 
+    private void getkhoa() {
+        ApiService.apiService.showkhoa().enqueue(new Callback<ArrayList<khoadomain>>() {
+            @Override
+            public void onResponse(Call<ArrayList<khoadomain>> call, Response<ArrayList<khoadomain>> response) {
+                khoa = response.body();
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<khoadomain>> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void getlop() {
+        ApiService.apiService.showlop().enqueue(new Callback<ArrayList<lopdomain>>() {
+            @Override
+            public void onResponse(Call<ArrayList<lopdomain>> call, Response<ArrayList<lopdomain>> response) {
+                lop = response.body();
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<lopdomain>> call, Throwable t) {
+
+            }
+        });
+    }
+
+
     private void setInfor(userdomain user) {
+        String lsh = null, ksh = null;
+        int idk = 0;
+        for(lopdomain i: lop){
+            if(user.getIdlop()==i.getIdlop()){
+                lsh = i.getTenlop();
+                idk = i.getIdkhoa();
+                break;
+            }
+        }
+        for(khoadomain i: khoa){
+            if(idk == i.getIdkhoa()){
+                ksh = i.getTenkhoa();
+                break;
+            }
+        }
+        txt_hname.setText(user.getTen());
         tv_hoten.setText(user.getTen());
         tv_email.setText(user.getEmail());
         tv_ngaysinh.setText(user.getNgaysinh());
         tv_gioitinh.setText(user.getGioitinh());
         tv_sdt.setText(user.getSdt());
         tv_masv.setText(user.getMadn());
-        tv_lop.setText(user.getIdlop());
+        tv_lop.setText(lsh);
+        tv_khoa.setText(ksh);
     }
 
     public void OnTab() {
@@ -73,5 +129,6 @@ public class ThongTinCaNhan extends AppCompatActivity {
         tv_lop = findViewById(R.id.tv_ttcn_lop);
         tv_khoa = findViewById(R.id.tv_ttcn_khoa);
         tv_masv = findViewById(R.id.tv_ttcn_masv);
+        txt_hname = findViewById(R.id.txt_hname);
     }
 }
