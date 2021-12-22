@@ -118,6 +118,7 @@ public class ThongTinCaNhan extends AppCompatActivity {
             }
         });
     }
+
     public void AnhXa() {
         btn_sua_ttcn = findViewById(R.id.btn_sua_ttcn);
         img_back_ttcn = findViewById(R.id.img_back_ttcn);
