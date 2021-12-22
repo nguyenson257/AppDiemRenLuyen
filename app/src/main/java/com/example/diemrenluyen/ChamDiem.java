@@ -263,11 +263,11 @@ public class ChamDiem extends AppCompatActivity {
         tongdiem3 = findViewById(R.id.tongdiem3);
         tongdiem4 = findViewById(R.id.tongdiem4);
         tongdiem5 = findViewById(R.id.tongdiem5);
-        noidung1 = findViewById(R.id.noidung);
-        noidung2 = findViewById(R.id.noidung2);
-        noidung3 = findViewById(R.id.noidung3);
-        noidung4 = findViewById(R.id.noidung4);
-        noidung5 = findViewById(R.id.noidung5);
+        noidung1 = findViewById(R.id.txt_noidung1);
+        noidung2 = findViewById(R.id.txt_noidung2);
+        noidung3 = findViewById(R.id.txt_noidung3);
+        noidung4 = findViewById(R.id.txt_noidung4);
+        noidung5 = findViewById(R.id.txt_noidung5);
         btn_close = findViewById(R.id.btn_close);
     }
 }
