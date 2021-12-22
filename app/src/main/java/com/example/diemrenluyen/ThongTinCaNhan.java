@@ -113,6 +113,8 @@ public class ThongTinCaNhan extends AppCompatActivity {
                 Intent intent = new Intent(ThongTinCaNhan.this, ChinhSuaThongTin.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("object_user",user);
+                bundle.putSerializable("object_lop",tv_lop.getText().toString());
+                bundle.putSerializable("object_khoa",tv_khoa.getText().toString());
                 intent.putExtras(bundle);
                 startActivity(intent);
             }

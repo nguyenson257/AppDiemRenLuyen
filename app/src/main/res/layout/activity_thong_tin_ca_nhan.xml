@@ -36,8 +36,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/header"
-        android:layout_above="@id/bottom_nav">
+        android:layout_above="@id/bottom_nav"
+        android:layout_below="@id/header">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,9 +50,9 @@
                 android:id="@+id/body"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                android:gravity="center">
 
                 <ImageView
                     android:id="@+id/avt"
@@ -76,11 +76,12 @@
                     android:textStyle="bold" />
 
             </RelativeLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Mã sinh viên"/>
+                android:text="Mã sinh viên" />
 
             <TextView
                 android:id="@+id/tv_ttcn_masv"
@@ -88,33 +89,36 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/tv_gachchan_hoso"
-                android:text="1911505310146"
                 android:paddingBottom="5dp"
+                android:text="1911505310146"
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Họ tên"/>
+                android:text="Họ tên" />
+
             <TextView
                 android:id="@+id/tv_ttcn_hoten"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/tv_gachchan_hoso"
-                android:text="Nguyễn Nhã Thy"
                 android:paddingBottom="5dp"
+                android:text="Nguyễn Nhã Thy"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Giới tính"/>
+                android:text="Giới tính" />
+
             <TextView
                 android:id="@+id/tv_ttcn_gioitinh"
                 android:layout_width="match_parent"
@@ -124,13 +128,14 @@
                 android:text="Nữ"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Ngày sinh"/>
+                android:text="Ngày sinh" />
+
             <TextView
                 android:id="@+id/tv_ttcn_ngaysinh"
                 android:layout_width="match_parent"
@@ -140,13 +145,14 @@
                 android:text="01/01/1999"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Số điện thoại"/>
+                android:text="Số điện thoại" />
+
             <TextView
                 android:id="@+id/tv_ttcn_sdt"
                 android:layout_width="match_parent"
@@ -156,29 +162,31 @@
                 android:text="0394726582"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Email"/>
+                android:text="Email" />
+
             <TextView
                 android:id="@+id/tv_ttcn_email"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/tv_gachchan_hoso"
-                android:text="nhatthy@gmail.com"
                 android:paddingBottom="5dp"
+                android:text="nhatthy@gmail.com"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Lớp"/>
+                android:text="Lớp" />
 
             <TextView
                 android:id="@+id/tv_ttcn_lop"
@@ -186,16 +194,17 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/tv_gachchan_hoso"
-                android:text=""
                 android:paddingBottom="5dp"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Khoa"/>
+                android:text="Khoa" />
 
             <TextView
                 android:id="@+id/tv_ttcn_khoa"
@@ -203,8 +212,8 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/tv_gachchan_hoso"
-                android:text=""
                 android:paddingBottom="5dp"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold" />
