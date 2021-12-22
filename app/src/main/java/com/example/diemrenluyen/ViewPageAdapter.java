@@ -17,8 +17,8 @@ public class ViewPageAdapter extends PagerAdapter {
     int images[]={
             R.raw.anim_student1,
             R.raw.anim_student2,
-            R.raw.anim_student1,
-            R.raw.anim_student2,
+            R.raw.anim_student3,
+            R.raw.anim_student4,
     };
     int heading[]={
             R.string.heading1,

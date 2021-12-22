@@ -180,13 +180,13 @@
                 android:layout_marginTop="15dp"
                 android:text="Lớp"/>
 
-            <EditText
+            <TextView
                 android:id="@+id/tv_ttcn_lop"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/tv_gachchan_hoso"
-                android:text="19T1"
+                android:text=""
                 android:paddingBottom="5dp"
                 android:textColor="@color/black"
                 android:textSize="18dp"
@@ -197,13 +197,13 @@
                 android:layout_marginTop="15dp"
                 android:text="Khoa"/>
 
-            <EditText
+            <TextView
                 android:id="@+id/tv_ttcn_khoa"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/tv_gachchan_hoso"
-                android:text="Khoa dien tu"
+                android:text=""
                 android:paddingBottom="5dp"
                 android:textColor="@color/black"
                 android:textSize="18dp"

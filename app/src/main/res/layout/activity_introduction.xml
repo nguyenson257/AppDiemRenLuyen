@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#dff9fb"
+    android:background="#ffffff"
     tools:context=".Introduction">
     <Button
         android:id="@+id/skipbtn"
@@ -20,10 +20,10 @@
 
     <ImageView
         android:id="@+id/logo_app"
-        android:layout_width="133dp"
-        android:layout_height="114dp"
-        android:src="@drawable/img_logo"
+        android:layout_width="99dp"
+        android:layout_height="77dp"
         android:layout_marginTop="10dp"
+        android:src="@drawable/img_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

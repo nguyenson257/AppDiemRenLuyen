@@ -33,7 +33,6 @@ public class ThongTinCaNhan extends AppCompatActivity {
         AnhXa();
         getlop();
         getkhoa();
-        setInfor(user);
         OnTab();
     }
 
@@ -42,6 +41,7 @@ public class ThongTinCaNhan extends AppCompatActivity {
             @Override
             public void onResponse(Call<ArrayList<khoadomain>> call, Response<ArrayList<khoadomain>> response) {
                 khoa = response.body();
+                setInfor(user);
             }
 
             @Override
