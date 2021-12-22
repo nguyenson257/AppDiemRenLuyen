@@ -14,7 +14,7 @@
         android:theme="@style/Theme.DiemRenLuyen"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Introduction"
+            android:name=".DangNhap"
             android:exported="true" />
         <activity
             android:name=".DoiMatKhau"
@@ -35,7 +35,7 @@
             android:name=".ThongBao"
             android:exported="true" />
         <activity
-            android:name=".DangNhap"
+            android:name=".Introduction"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
