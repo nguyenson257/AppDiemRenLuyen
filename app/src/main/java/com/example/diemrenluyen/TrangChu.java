@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ public class TrangChu extends AppCompatActivity {
             user = (userdomain) bundleRecevie.get("object_user");
         }
         Toast.makeText(TrangChu.this, user.toString(), Toast.LENGTH_SHORT).show();
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         bottomNavigation();
     }
 

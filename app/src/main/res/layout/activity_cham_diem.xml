@@ -60,7 +60,7 @@
                     android:text="I. NỘI DUNG 1"
                     android:textAllCaps="true"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <RelativeLayout
@@ -133,7 +133,7 @@
                     android:text="Ii. NỘI DUNG 2"
                     android:textAllCaps="true"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <RelativeLayout
@@ -206,7 +206,7 @@
                     android:text="Iii. NỘI DUNG 3"
                     android:textAllCaps="true"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <RelativeLayout
@@ -279,7 +279,7 @@
                     android:text="Iv. NỘI DUNG 4"
                     android:textAllCaps="true"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <RelativeLayout
@@ -352,7 +352,7 @@
                     android:text="v. NỘI DUNG 5"
                     android:textAllCaps="true"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <RelativeLayout
@@ -425,7 +425,7 @@
         android:textSize="18sp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
-        android:text="Tổng điểm đã chấm: 100/100 điểm"/>
+        android:text="Tổng điểm đã chấm: 0/100 điểm"/>
 
     <LinearLayout
         android:layout_width="match_parent"

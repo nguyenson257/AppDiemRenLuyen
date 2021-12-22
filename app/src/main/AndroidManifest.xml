@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.diemrenluyen">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DiemRenLuyen"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".DangNhap"
+            android:exported="true" />
         <activity
             android:name=".DoiMatKhau"
             android:exported="true" />
@@ -30,8 +35,8 @@
             android:name=".ThongBao"
             android:exported="true" />
         <activity
-            android:name=".ChamDiem"
-            android:exported="true" >
+            android:name=".Introduction"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,13 +50,11 @@
             android:name=".TrangChu"
             android:exported="true" />
         <activity
-            android:name=".DangNhap"
+            android:name=".ChamDiem"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

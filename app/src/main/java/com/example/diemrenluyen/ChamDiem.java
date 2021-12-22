@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -36,7 +37,7 @@ public class ChamDiem extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cham_diem);
-
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Bundle bundleRecevie = getIntent().getExtras();
         if(bundleRecevie!=null){
             user = (userdomain) bundleRecevie.get("object_user");
@@ -263,11 +264,11 @@ public class ChamDiem extends AppCompatActivity {
         tongdiem3 = findViewById(R.id.tongdiem3);
         tongdiem4 = findViewById(R.id.tongdiem4);
         tongdiem5 = findViewById(R.id.tongdiem5);
-        noidung1 = findViewById(R.id.noidung);
-        noidung2 = findViewById(R.id.noidung2);
-        noidung3 = findViewById(R.id.noidung3);
-        noidung4 = findViewById(R.id.noidung4);
-        noidung5 = findViewById(R.id.noidung5);
+        noidung1 = findViewById(R.id.txt_noidung1);
+        noidung2 = findViewById(R.id.txt_noidung2);
+        noidung3 = findViewById(R.id.txt_noidung3);
+        noidung4 = findViewById(R.id.txt_noidung4);
+        noidung5 = findViewById(R.id.txt_noidung5);
         btn_close = findViewById(R.id.btn_close);
     }
 }
