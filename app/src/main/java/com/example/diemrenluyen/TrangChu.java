@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -14,7 +15,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class TrangChu extends AppCompatActivity {
 
     private userdomain user;
-
+    private TextView tv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +24,11 @@ public class TrangChu extends AppCompatActivity {
         if(bundleRecevie!=null){
             user = (userdomain) bundleRecevie.get("object_user");
         }
-        Toast.makeText(TrangChu.this, user.toString(), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(TrangChu.this, user.toString(), Toast.LENGTH_SHORT).show();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         bottomNavigation();
+        tv=findViewById(R.id.text_chao);
+        tv.setText("Chào bạn " + user.getTen() +",");
     }
 
     private void bottomNavigation() {
