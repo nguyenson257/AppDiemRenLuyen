@@ -33,7 +33,7 @@ public interface ApiService {
     @GET("khoa/list")
     Call<ArrayList<khoadomain>> showkhoa();
     @POST("chitietchamdrl/add")
-    Call<chitietchamdrldomain> adddrl(@Body chitietchamdrldomain diemnhapvao);
+    Call<chitietchamdrldomain> adddrl(@Body chitietchamdrldomain chitietchamdrl);
     @POST("user/update/{id}")
     Call<userdomain> updateuser(@Body userdomain user,@Path("id") int id);
 

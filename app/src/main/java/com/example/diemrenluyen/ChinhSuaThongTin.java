@@ -72,24 +72,7 @@ public class ChinhSuaThongTin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 saveInfor(user);
-                ApiService.apiService.updateuser(user,user.getIduser()).enqueue(new Callback<userdomain>() {
-                    @Override
-                    public void onResponse(Call<userdomain> call, Response<userdomain> response) {
-                        if(response.isSuccessful()){
-                            Toast.makeText(ChinhSuaThongTin.this,"Cập nhật thành công!!!",Toast.LENGTH_LONG).show();
-                        }
-                    }
 
-                    @Override
-                    public void onFailure(Call<userdomain> call, Throwable t) {
-                        Toast.makeText(ChinhSuaThongTin.this,"Cập nhật thất bai!!!",Toast.LENGTH_LONG).show();
-                    }
-                });
-                Intent intent = new Intent(ChinhSuaThongTin.this, ThongTinCaNhan.class);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("object_user",user);
-                intent.putExtras(bundle);
-                startActivity(intent);
             }
         });
     }
@@ -109,6 +92,23 @@ public class ChinhSuaThongTin extends AppCompatActivity {
                 user.setGioitinh("Khác");
             }
         }
+        ApiService.apiService.updateuser(user,user.getIduser()).enqueue(new Callback<userdomain>() {
+            @Override
+            public void onResponse(Call<userdomain> call, Response<userdomain> response) {
+                if(response.isSuccessful()){
+                }
+            }
+
+            @Override
+            public void onFailure(Call<userdomain> call, Throwable t) {
+                Toast.makeText(ChinhSuaThongTin.this,"Cập nhật thành công!!!",Toast.LENGTH_LONG).show();
+            }
+        });
+        Intent intent = new Intent(ChinhSuaThongTin.this, ThongTinCaNhan.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("object_user",user);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
     private void setinfo() {

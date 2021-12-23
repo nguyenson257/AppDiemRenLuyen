@@ -58,15 +58,7 @@ public class ChamDiem extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 getdrl(drl);
-                for (chitietchamdrldomain i:drl
-                     ) {
-                    adddrl(i);
-                }
-                Intent intent = new Intent(getApplicationContext(), TrangChu.class);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("object_user",user);
-                intent.putExtras(bundle);
-                startActivity(intent);
+
             }
         });
         btn_capnhat.setOnClickListener(new View.OnClickListener() {
@@ -139,6 +131,15 @@ public class ChamDiem extends AppCompatActivity {
             drl.add(new chitietchamdrldomain(user.getIduser(),d.idmdcon,1,d.diemcham,0,0));
         };
 
+        for (chitietchamdrldomain i:drl
+        ) {
+            adddrl(i);
+        }
+        Intent intent = new Intent(getApplicationContext(), TrangChu.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("object_user",user);
+        intent.putExtras(bundle);
+        startActivity(intent);
 
     }
 
