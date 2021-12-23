@@ -103,7 +103,7 @@ public class DangNhap extends AppCompatActivity {
 
     public void init(){
         txt_username = findViewById(R.id.txt_username);
-        txt_password = findViewById(R.id.txt_password);
+        txt_password = findViewById(R.id.pass);
         btn_dangnhap = findViewById(R.id.btn_dangnhap);
     }
 }
