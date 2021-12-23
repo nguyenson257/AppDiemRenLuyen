@@ -32,6 +32,7 @@ public class ChamDiem extends AppCompatActivity {
     private TextView noidung1, noidung2, noidung3, noidung4, noidung5;
     private ImageView btn_close;
     private userdomain user;
+    private ArrayList<chitietchamdrldomain> drl = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +48,25 @@ public class ChamDiem extends AppCompatActivity {
         mucchalist();
         mucchamlist();
         setlayoutrecycleview();
+        Ontab();
 
+
+    }
+
+    private void Ontab() {
         btn_nopdiem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                getdrl(drl);
+                for (chitietchamdrldomain i:drl
+                     ) {
+                    adddrl(i);
+                }
+                Intent intent = new Intent(getApplicationContext(), TrangChu.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("object_user",user);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
         btn_capnhat.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +87,60 @@ public class ChamDiem extends AppCompatActivity {
         });
     }
 
+    private void adddrl(chitietchamdrldomain i) {
+        ApiService.apiService.adddrl(i).enqueue(new Callback<chitietchamdrldomain>() {
+            @Override
+            public void onResponse(Call<chitietchamdrldomain> call, Response<chitietchamdrldomain> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<chitietchamdrldomain> call, Throwable t) {
+
+            }
+        });
+    }
+
+
+    private void getdrl(ArrayList<chitietchamdrldomain> drl) {
+        list1= (mucdiemAdapter) danhsachmuccham1.getAdapter();
+        list2= (mucdiemAdapter) danhsachmuccham2.getAdapter();
+        list3= (mucdiemAdapter) danhsachmuccham3.getAdapter();
+        list4= (mucdiemAdapter) danhsachmuccham4.getAdapter();
+        list5= (mucdiemAdapter) danhsachmuccham5.getAdapter();
+        listdiem1=(list1.getitem());
+        listdiem2=(list2.getitem());
+        listdiem3=(list3.getitem());
+        listdiem4=(list4.getitem());
+        listdiem5=(list5.getitem());
+
+        for (getdiemcham d:listdiem1
+        ) {
+            drl.add(new chitietchamdrldomain(user.getIduser(),d.idmdcon,1,d.diemcham,0,0));
+        };
+
+        for (getdiemcham d:listdiem2
+        ) {
+            drl.add(new chitietchamdrldomain(user.getIduser(),d.idmdcon,1,d.diemcham,0,0));
+        };
+
+        for (getdiemcham d:listdiem3
+        ) {
+            drl.add(new chitietchamdrldomain(user.getIduser(),d.idmdcon,1,d.diemcham,0,0));
+        };
+
+        for (getdiemcham d:listdiem4
+        ) {
+            drl.add(new chitietchamdrldomain(user.getIduser(),d.idmdcon,1,d.diemcham,0,0));
+        };
+
+        for (getdiemcham d:listdiem5
+        ) {
+            drl.add(new chitietchamdrldomain(user.getIduser(),d.idmdcon,1,d.diemcham,0,0));
+        };
+
+
+    }
 
 
     private void setlayoutrecycleview() {

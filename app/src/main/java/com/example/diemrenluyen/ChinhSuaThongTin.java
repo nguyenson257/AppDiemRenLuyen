@@ -45,6 +45,8 @@ public class ChinhSuaThongTin extends AppCompatActivity {
         OnTab();
     }
 
+
+
     private void OnTab() {
         //quay lại trang thông tin
         img_back_cstt.setOnClickListener(new View.OnClickListener() {
@@ -69,20 +71,20 @@ public class ChinhSuaThongTin extends AppCompatActivity {
         btn_luu_cstt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                saveInfor(user);
-//                ApiService.apiService.updateKhachhang(khachhang,khachhang.getIdkh()).enqueue(new Callback<Khachhang>() {
-//                    @Override
-//                    public void onResponse(Call<Khachhang> call, Response<Khachhang> response) {
-//                        if(response.isSuccessful()){
-//                            Toast.makeText(ChinhSuaThongTin.this,"Cập nhật thành công!!!",Toast.LENGTH_LONG).show();
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Call<Khachhang> call, Throwable t) {
-//                        Toast.makeText(ChinhSuaThongTin.this,"Thaats bai!!!",Toast.LENGTH_LONG).show();
-//                    }
-//                });
+                saveInfor(user);
+                ApiService.apiService.updateuser(user,user.getIduser()).enqueue(new Callback<userdomain>() {
+                    @Override
+                    public void onResponse(Call<userdomain> call, Response<userdomain> response) {
+                        if(response.isSuccessful()){
+                            Toast.makeText(ChinhSuaThongTin.this,"Cập nhật thành công!!!",Toast.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<userdomain> call, Throwable t) {
+                        Toast.makeText(ChinhSuaThongTin.this,"Cập nhật thất bai!!!",Toast.LENGTH_LONG).show();
+                    }
+                });
                 Intent intent = new Intent(ChinhSuaThongTin.this, ThongTinCaNhan.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("object_user",user);
@@ -93,6 +95,20 @@ public class ChinhSuaThongTin extends AppCompatActivity {
     }
 
     private void saveInfor(userdomain user) {
+        user.setTen(edt_hoten.getText().toString());
+        user.setNgaysinh(edt_ngaysinh.getText().toString());
+        user.setSdt(edt_sdt.getText().toString());
+        user.setEmail(edt_email.getText().toString());
+
+        if (rbt_nam.isChecked()){
+            user.setGioitinh("Nam");
+        }else {
+            if (rbt_nu.isChecked()){
+                user.setGioitinh("Nữ");
+            }else {
+                user.setGioitinh("Khác");
+            }
+        }
     }
 
     private void setinfo() {
