@@ -48,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
-                    android:background="#FFF5F2"
+                    android:background="#EAF6FB"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp">
 
@@ -57,8 +57,8 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="30dp"
-                         />
+                        android:src="@drawable/img_notice1"
+                        android:layout_marginLeft="30dp" />
 
 
                     <TextView
@@ -81,7 +81,7 @@
                     android:layout_below="@id/re_cod"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
-                    android:background="#FFF5F2"
+                    android:background="#EAF6FB"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp">
 
@@ -93,17 +93,17 @@
                         android:layout_marginLeft="20dp"
                         android:layout_toRightOf="@id/img_momo"
                         android:fontFamily="@font/opensans"
-                        android:text="Bạn đã liên kết thành công với ví MoMo. Tận dụng ưu đãi ngay hôm nay nào!"
+                        android:text="Một thông báo mới đã được cập nhật. Ấn vào để xem ngay nào."
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
                     <ImageView
                         android:id="@+id/img_momo"
                         android:layout_width="50dp"
+                        android:src="@drawable/img_notice2"
                         android:layout_height="50dp"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="30dp"
-                         />
+                        android:layout_marginLeft="30dp" />
 
 
                 </RelativeLayout>
@@ -115,7 +115,7 @@
                     android:layout_below="@id/re_momo"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
-                    android:background="#FFF5F2"
+                    android:background="#EAF6FB"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp">
 
@@ -127,7 +127,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_toRightOf="@id/img_zalo"
                         android:fontFamily="@font/opensans"
-                        android:text="Salad Trứng thơm ngon thât phù hợp cho buổi chiều. Nhanh tay chớp deal siêu hot nào!"
+                        android:text="Đừng quên bạn có thể kiểm tra danh sách lớp ngay trong app nhé!"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
@@ -136,8 +136,8 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="30dp"
-                         />
+                        android:src="@drawable/img_notice3"
+                        android:layout_marginLeft="30dp" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -147,7 +147,7 @@
                     android:layout_below="@id/re_zalo"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
-                    android:background="#FFF5F2"
+                    android:background="#EAF6FB"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp">
 
@@ -159,7 +159,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_toRightOf="@id/img_banking"
                         android:fontFamily="@font/opensans"
-                        android:text="Đơn hàng của bạn đã được xác nhận thành công. Vui lòng nhận điện thoại khi shipper giao hàng"
+                        android:text="Xem điểm đã được cập nhật ngay nào"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
@@ -167,9 +167,9 @@
                         android:id="@+id/img_banking"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
+                        android:src="@drawable/img_notice4"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="30dp"
-                         />
+                        android:layout_marginLeft="30dp" />
 
                 </RelativeLayout>
 
