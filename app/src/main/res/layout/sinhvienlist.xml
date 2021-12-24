@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imghinh"
+        android:src="@drawable/imgmain"
+        android:layout_width="120dp"
+        android:layout_height="120dp" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imghinh"
+        android:text="Name"
+        android:textColor="#E4086F"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1911505310234"
+        android:layout_below="@id/name"
+        android:id="@+id/msv"
+        android:layout_toRightOf="@id/imghinh"/>
+
+    <TextView
+        android:id="@+id/gt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/msv"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/imghinh"
+        android:text="Giới tính" />
+
+</RelativeLayout>

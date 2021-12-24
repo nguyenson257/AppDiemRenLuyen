@@ -27,6 +27,7 @@
         <entry key="..\:/SINHVIEN/HOC KY 5-121/Android Studio/AppDiemRenLuyen/app/src/main/res/drawable/bg_input.xml" value="0.2703125" />
         <entry key="..\:/SINHVIEN/HOC KY 5-121/Android Studio/AppDiemRenLuyen/app/src/main/res/drawable/bg_inputtext.xml" value="0.2703125" />
         <entry key="..\:/SINHVIEN/HOC KY 5-121/Android Studio/AppDiemRenLuyen/app/src/main/res/drawable/bg_searchbox.xml" value="0.2703125" />
+        <entry key="..\:/SINHVIEN/HOC KY 5-121/Android Studio/AppDiemRenLuyen/app/src/main/res/drawable/ic_search.xml" value="0.2703125" />
         <entry key="..\:/SINHVIEN/HOC KY 5-121/Android Studio/AppDiemRenLuyen/app/src/main/res/layout/activity_cham_diem.xml" value="0.264" />
         <entry key="..\:/SINHVIEN/HOC KY 5-121/Android Studio/AppDiemRenLuyen/app/src/main/res/layout/activity_chinh_sua_thong_tin.xml" value="0.25416666666666665" />
         <entry key="..\:/SINHVIEN/HOC KY 5-121/Android Studio/AppDiemRenLuyen/app/src/main/res/layout/activity_dang_nhap.xml" value="0.25416666666666665" />
@@ -34,10 +35,12 @@
         <entry key="..\:/SINHVIEN/HOC KY 5-121/Android Studio/AppDiemRenLuyen/app/src/main/res/layout/activity_ho_so.xml" value="0.25416666666666665" />
         <entry key="..\:/SINHVIEN/HOC KY 5-121/Android Studio/AppDiemRenLuyen/app/src/main/res/layout/activity_introduction.xml" value="0.25416666666666665" />
         <entry key="..\:/SINHVIEN/HOC KY 5-121/Android Studio/AppDiemRenLuyen/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/SINHVIEN/HOC KY 5-121/Android Studio/AppDiemRenLuyen/app/src/main/res/layout/activity_thong_bao.xml" value="0.2" />
         <entry key="..\:/SINHVIEN/HOC KY 5-121/Android Studio/AppDiemRenLuyen/app/src/main/res/layout/activity_thong_tin_ca_nhan.xml" value="0.25416666666666665" />
         <entry key="..\:/SINHVIEN/HOC KY 5-121/Android Studio/AppDiemRenLuyen/app/src/main/res/layout/activity_trang_chu.xml" value="0.25416666666666665" />
         <entry key="..\:/SINHVIEN/HOC KY 5-121/Android Studio/AppDiemRenLuyen/app/src/main/res/layout/activity_xem_diem.xml" value="0.25416666666666665" />
         <entry key="..\:/SINHVIEN/HOC KY 5-121/Android Studio/AppDiemRenLuyen/app/src/main/res/layout/holder_danhsach_muccham.xml" value="0.4" />
+        <entry key="..\:/SINHVIEN/HOC KY 5-121/Android Studio/AppDiemRenLuyen/app/src/main/res/layout/sinhvienlist.xml" value="0.25416666666666665" />
         <entry key="..\:/SINHVIEN/HOC KY 5-121/Android Studio/AppDiemRenLuyen/app/src/main/res/layout/slider_layout.xml" value="0.25416666666666665" />
       </map>
     </option>

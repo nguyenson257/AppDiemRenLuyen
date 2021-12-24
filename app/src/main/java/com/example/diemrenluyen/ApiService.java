@@ -30,6 +30,8 @@ public interface ApiService {
     Call<ArrayList<userdomain>> showuser();
     @GET("lop/list")
     Call<ArrayList<lopdomain>> showlop();
+    @GET("user/listsv/{id}")
+    Call<ArrayList<userdomain>> showsv(@Path("id")int id);
     @GET("khoa/list")
     Call<ArrayList<khoadomain>> showkhoa();
     @POST("chitietchamdrl/add")
