@@ -41,6 +41,12 @@ public class SinhVienAdapter extends RecyclerView.Adapter<SinhVienAdapter.ViewHo
         return userdomains.size();
     }
 
+    public void filterList(ArrayList<userdomain> filterList, userdomain user1){
+        userdomains = filterList;
+        user = user1;
+        notifyDataSetChanged();
+    };
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView name,msv, gt;
         LinearLayout favBtn ;

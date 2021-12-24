@@ -8,8 +8,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.icu.lang.UCharacter;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -22,10 +25,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class XemDiem extends AppCompatActivity {
-    private RecyclerView.Adapter  adapter;
+    private SinhVienAdapter  adapter;
     public userdomain user;
     private int object;
     private RecyclerView recyclerViewPopularList;
+    private EditText search_box;
+    private ArrayList<userdomain> danhsachsv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +43,23 @@ public class XemDiem extends AppCompatActivity {
 //        object = (int) getIntent().getSerializableExtra("object");
         bottomNavigation();
         recyclerViewPopular();
+        search_box = findViewById(R.id.search_box);
+        search_box.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                filter(editable.toString());
+            }
+        });
     }
     private void recyclerViewPopular() {
         int numcol=2;
@@ -47,7 +69,7 @@ public class XemDiem extends AppCompatActivity {
             @Override
             public void onResponse(Call<ArrayList<userdomain>> call, Response<ArrayList<userdomain>> response) {
                 Toast.makeText(XemDiem.this,user.toString(), Toast.LENGTH_SHORT).show();
-                ArrayList<userdomain> danhsachsv = response.body();
+                danhsachsv = response.body();
                 adapter = new SinhVienAdapter(danhsachsv,user);
                 recyclerViewPopularList.setAdapter(adapter);
             }
@@ -58,7 +80,15 @@ public class XemDiem extends AppCompatActivity {
         });
 
     }
-
+    private void filter(String text) {
+        ArrayList<userdomain> userdomains = new ArrayList<>();
+        for (userdomain u : danhsachsv){
+            if (u.getTen().toLowerCase().contains(text.toLowerCase())){
+                userdomains.add(u);
+            }
+        }
+        adapter.filterList(userdomains,user);
+    }
     private void bottomNavigation() {
         FloatingActionButton floatingActionButton = findViewById(R.id.card_btn);
         LinearLayout homeBtn = findViewById(R.id.homeBtn);
