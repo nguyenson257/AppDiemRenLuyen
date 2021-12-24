@@ -8,20 +8,18 @@
     <RelativeLayout
         android:id="@+id/header_search"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="110dp"
         android:background="@color/xanhduong"
         android:paddingBottom="20dp">
-
-
 
         <EditText
             android:id="@+id/search_box"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView"
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
+            android:layout_centerVertical="true"
             android:layout_marginRight="20dp"
             android:background="@drawable/bg_searchbox"
             android:drawableRight="@drawable/ic_search"
@@ -30,18 +28,19 @@
             android:padding="10dp" />
 
     </RelativeLayout>
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/header_search"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:layout_below="@id/header_search"
         android:fontFamily="@font/opensans"
         android:text="DANH SÁCH LỚP CỦA BẠN "
         android:textAlignment="center"
         android:textColor="@color/xanhdam"
-        android:textSize="28dp"
+        android:textSize="25dp"
         android:textStyle="bold" />
     <ScrollView
         android:layout_width="match_parent"

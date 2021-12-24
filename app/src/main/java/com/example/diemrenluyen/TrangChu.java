@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,12 +18,18 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class TrangChu extends AppCompatActivity {
 
     private userdomain user;
-    private TextView tv;
+    private TextView tv, thoigian;
+    ImageView img;
+    private Animation topAnim, bottomAnim, leftAnim;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trang_chu);
         Bundle bundleRecevie = getIntent().getExtras();
+        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_ani);
+        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_ani);
+        leftAnim = AnimationUtils.loadAnimation(this, R.anim.left_ani);
+
         if(bundleRecevie!=null){
             user = (userdomain) bundleRecevie.get("object_user");
         }
@@ -28,7 +37,12 @@ public class TrangChu extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         bottomNavigation();
         tv=findViewById(R.id.text_chao);
+        img=findViewById(R.id.img);
+        thoigian=findViewById(R.id.thoigian);
         tv.setText("Chào bạn " + user.getTen() +",");
+        tv.setAnimation(leftAnim);
+        img.setAnimation(bottomAnim);
+        thoigian.setAnimation(bottomAnim);
     }
 
     private void bottomNavigation() {

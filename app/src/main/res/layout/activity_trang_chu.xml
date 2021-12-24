@@ -26,32 +26,36 @@
             android:textColor="@color/white"/>
 
     </RelativeLayout>
+
     <TextView
         android:id="@+id/text_chao"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/header_search"
-        android:text="Chào bạn Dương Thị Miên,"
         android:layout_marginLeft="10dp"
-        android:textStyle="italic"
-        android:textSize="16sp"
-        />
+        android:layout_marginTop="20dp"
+        android:text="Chào bạn Dương Thị Miên,"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
     <ImageView
         android:id="@+id/img"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/text_chao"
         android:layout_marginTop="-850dp"
-        android:src="@drawable/imgmain"/>
+        android:src="@drawable/imgmain" />
+
     <TextView
+        android:id="@+id/thoigian"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Giai đoạn chấm cho sinh viên diễn ra từ ngày 24/12/2021 - 28/12/2021"
         android:layout_below="@id/img"
         android:layout_marginTop="-300dp"
-        android:textSize="18sp"
+        android:text="Giai đoạn chấm cho sinh viên diễn ra từ ngày 24/12/2021 - 28/12/2021"
         android:textAlignment="center"
-        android:textColor="#e74c3c"/>
+        android:textColor="#e74c3c"
+        android:textSize="18sp" />
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
