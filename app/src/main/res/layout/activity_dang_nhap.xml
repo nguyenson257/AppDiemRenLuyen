@@ -58,6 +58,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layout_pass"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="370dp"
         android:layout_height="55dp"
         android:layout_below="@id/txt_username"
