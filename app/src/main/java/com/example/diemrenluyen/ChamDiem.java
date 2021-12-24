@@ -28,7 +28,7 @@ public class ChamDiem extends AppCompatActivity {
     private int mmax1=0, mmax2=0, mmax3=0, mmax4=0, mmax5=0;
     private ArrayList<getdiemcham> listdiem1 = new ArrayList<>(), listdiem2 = new ArrayList<>(), listdiem3 = new ArrayList<>(), listdiem4 = new ArrayList<>(), listdiem5 = new ArrayList<>();
     private Button btn_nopdiem,btn_capnhat;
-    private TextView tongdiem1, tongdiem2, tongdiem3, tongdiem4, tongdiem5, tongdiemtatca;
+    private TextView tongdiem1, tongdiem2, tongdiem3, tongdiem4, tongdiem5, tongdiemtatca, xeploai;
     private TextView noidung1, noidung2, noidung3, noidung4, noidung5;
     private ImageView btn_close;
     private userdomain user;
@@ -287,6 +287,19 @@ public class ChamDiem extends AppCompatActivity {
         tongdiem4.setText(text4);
         tongdiem5.setText(text5);
         tongdiemtatca.setText(texttc);
+        if (tongtc >= 90){
+            xeploai.setText("Xếp loại: Xuất sắc");
+        }else if (tongtc >= 80){
+            xeploai.setText("Xếp loại: Giỏi");
+        }else if (tongtc >= 65){
+            xeploai.setText("Xếp loại: Khá");
+        }else if (tongtc >= 50){
+            xeploai.setText("Xếp loại: Trung bình");
+        }else if (tongtc >= 35){
+            xeploai.setText("Xếp loại: Yếu");
+        }else{
+            xeploai.setText("Xếp loại: kém");
+        }
     }
 
     private void mucchalist() {
@@ -341,5 +354,6 @@ public class ChamDiem extends AppCompatActivity {
         noidung4 = findViewById(R.id.txt_noidung4);
         noidung5 = findViewById(R.id.txt_noidung5);
         btn_close = findViewById(R.id.btn_close);
+        xeploai = findViewById(R.id.xeploai);
     }
 }

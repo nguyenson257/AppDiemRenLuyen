@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/header_search"
-        android:layout_above="@+id/tongdiemtatca">
+        android:layout_above="@+id/line">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -412,21 +412,39 @@
 
         </LinearLayout>
     </ScrollView>
-
+    <RelativeLayout
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/xanhduong"
+        android:layout_above="@id/tongdiemtatca"/>
     <TextView
         android:id="@+id/tongdiemtatca"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/grp_btn"
+        android:layout_above="@+id/xeploai"
         android:textColor="@color/xanhduong"
         android:fontFamily="@font/opensans"
         android:textStyle="bold"
-        android:gravity="right"
+        android:gravity="center"
         android:textSize="18sp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         android:text="Tổng điểm đã chấm: 0/100 điểm"/>
 
+    <TextView
+        android:id="@+id/xeploai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/grp_btn"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/opensans"
+        android:gravity="center"
+        android:text="Xếp loại:"
+        android:textColor="@color/xanhduong"
+        android:textSize="18sp"
+        android:textStyle="bold" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
