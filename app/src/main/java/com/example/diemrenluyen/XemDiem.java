@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -68,7 +69,6 @@ public class XemDiem extends AppCompatActivity {
         ApiService.apiService.showsv(user.getIdlop()).enqueue(new Callback<ArrayList<userdomain>>() {
             @Override
             public void onResponse(Call<ArrayList<userdomain>> call, Response<ArrayList<userdomain>> response) {
-                Toast.makeText(XemDiem.this,user.toString(), Toast.LENGTH_SHORT).show();
                 danhsachsv = response.body();
                 adapter = new SinhVienAdapter(danhsachsv,user);
                 recyclerViewPopularList.setAdapter(adapter);

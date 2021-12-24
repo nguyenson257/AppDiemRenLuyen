@@ -1,9 +1,11 @@
 package com.example.diemrenluyen;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -57,7 +59,23 @@ public class ChamDiem extends AppCompatActivity {
         btn_nopdiem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getdrl(drl);
+                AlertDialog.Builder alert = new AlertDialog.Builder(ChamDiem.this);
+                alert.setTitle("Xác nhận chấm điểm rèn luyện");
+                alert.setMessage("Bạn có chắc chắn muốn lưu điểm rèn luyện");
+                alert.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                         getdrl(drl);
+                    }
+                });
+                alert.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        alert.setCancelable(true);
+                    }
+                });
+                alert.show();
+
 
             }
         });
@@ -135,6 +153,7 @@ public class ChamDiem extends AppCompatActivity {
         ) {
             adddrl(i);
         }
+
         Intent intent = new Intent(getApplicationContext(), TrangChu.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("object_user",user);
