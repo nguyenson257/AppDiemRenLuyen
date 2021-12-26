@@ -8,7 +8,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -19,10 +22,12 @@ import retrofit2.Response;
 
 public class DangNhap extends AppCompatActivity {
 
-    private TextView txt_username, txt_password;
+    private TextView txt_username, txt_password, tv3;
     private Button btn_dangnhap;
     private ArrayList<userdomain> user= new ArrayList<>();
     private userdomain muser;
+    ImageView img;
+    private Animation topAnim, bottomAnim, leftAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +36,16 @@ public class DangNhap extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         init();
         getlistuser();
+        img=findViewById(R.id.imageView);
+        tv3=findViewById(R.id.textView3);
+        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_ani);
+        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_ani);
+        leftAnim = AnimationUtils.loadAnimation(this, R.anim.left_ani);
+        txt_username.setAnimation(leftAnim);
+        txt_password.setAnimation(leftAnim);
+        img.setAnimation(topAnim);
+        btn_dangnhap.setAnimation(bottomAnim);
+        tv3.setAnimation(bottomAnim);
         btn_dangnhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
