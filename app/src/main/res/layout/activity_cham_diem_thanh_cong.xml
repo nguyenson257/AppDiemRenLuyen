@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChamDiemThanhCong">
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="35dp"
+        android:paddingBottom="35dp">
+        <ImageView
+            android:id="@+id/img_back_ttcn"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/ic_baseline_chevron_left_24"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/opensans"
+            android:gravity="center_horizontal"
+            android:text="CHẤM ĐIỂM THÀNH CÔNG"
+            android:textColor="@color/xanhduong"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-300dp"
+        android:src="@drawable/imgchamdiemthanhcong" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/img"
+        android:layout_marginTop="-330dp"
+        android:fontFamily="@font/opensans"
+        android:text="Chúc mừng bạn đã chấm điểm thành công!"
+        android:textAlignment="center"
+        android:textColor="@color/cam"
+        android:textSize="20dp"
+        android:textStyle="bold|italic" />
+    <Button
+        android:id="@+id/btn_trangchu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="-180dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_back"
+        android:text="VỀ TRANG CHỦ"
+        android:textSize="28dp"
+        app:backgroundTint="@null" />
+
+</RelativeLayout>

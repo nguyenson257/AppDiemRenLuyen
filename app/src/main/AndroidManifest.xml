@@ -14,6 +14,9 @@
         android:theme="@style/Theme.DiemRenLuyen"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ChamDiemThanhCong"
+            android:exported="true" />
+        <activity
             android:name=".DangNhap"
             android:exported="true" />
         <activity
@@ -54,7 +57,7 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

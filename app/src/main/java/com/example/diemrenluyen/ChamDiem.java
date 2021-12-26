@@ -154,7 +154,7 @@ public class ChamDiem extends AppCompatActivity {
             adddrl(i);
         }
 
-        Intent intent = new Intent(getApplicationContext(), TrangChu.class);
+        Intent intent = new Intent(getApplicationContext(), ChamDiemThanhCong.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("object_user",user);
         intent.putExtras(bundle);
