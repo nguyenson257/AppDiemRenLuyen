@@ -317,7 +317,7 @@ public class ChamDiem extends AppCompatActivity {
         }else if (tongtc >= 35){
             xeploai.setText("Xếp loại: Yếu");
         }else{
-            xeploai.setText("Xếp loại: kém");
+            xeploai.setText("Xếp loại: Kém");
         }
     }
 
