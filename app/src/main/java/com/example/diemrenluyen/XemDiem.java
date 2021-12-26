@@ -1,18 +1,25 @@
 package com.example.diemrenluyen;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
+import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.icu.lang.UCharacter;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,15 +27,19 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class XemDiem extends AppCompatActivity {
+    private final int REQ_CODE_SPEECH_INPUT = 100 ;
     private SinhVienAdapter  adapter;
     public userdomain user;
     private int object;
+    private ImageView mic;
     private RecyclerView recyclerViewPopularList;
     private EditText search_box;
     private ArrayList<userdomain> danhsachsv;
@@ -45,6 +56,13 @@ public class XemDiem extends AppCompatActivity {
         bottomNavigation();
         recyclerViewPopular();
         search_box = findViewById(R.id.search_box);
+        mic=findViewById(R.id.iconmic);
+        mic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                speech_TO_TEXT();
+            }
+        });
         search_box.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -61,6 +79,48 @@ public class XemDiem extends AppCompatActivity {
                 filter(editable.toString());
             }
         });
+    }
+
+
+    public void speech_TO_TEXT(){
+        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault() );
+
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Đang nghe  --__-- ");
+
+        try {
+            startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
+        } catch (ActivityNotFoundException a) {
+            Toast.makeText(getApplicationContext(),
+                    "Sorry! Your device doesn\\'t support speech input" ,
+                    Toast.LENGTH_SHORT).show();
+        }
+    }
+    /**
+     * Receiving speech input
+     * */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+            case REQ_CODE_SPEECH_INPUT: {
+                if (resultCode == RESULT_OK && data != null) {
+
+                    List<String> result = data
+                            .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    String text = result.get(0);
+                    search_box.setText(text);
+
+                }
+                break;
+            }
+
+        }
     }
     private void recyclerViewPopular() {
         int numcol=2;
